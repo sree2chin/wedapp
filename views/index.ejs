@@ -1,1 +1,162 @@
-Durga 
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Durgas wedding</title>
+		  <meta name="description" content="durga vinays wedding invitation"/>
+	  	  <meta name="keywords" content="durga, vinay, durga vinay, wedding, invitation, wedding invitation"/>
+	  	  <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
+		<style>
+			body {
+				box-sizing: border-box;
+			    margin: 0px;
+			    padding: 0px;
+			}
+			.main-container {
+				background-image: url('https://i.pinimg.com/originals/d0/ef/7a/d0ef7a496f65e295ef32a0023a702983.png');
+				height: 100vh;
+				width: 100%;
+			}
+			.main-heading {
+				font-family: 'Parisienne', cursive;
+			    display: block;
+			    text-align: center;
+			    font-size: 38px;
+			    padding-top: 20px;
+			    color: white;
+			}
+			.header-flex-container {
+				
+			  justify-content: center;
+		    	padding-top: 20px;
+		    	color: white;
+			  
+			  display: -webkit-box;
+			  display: -moz-box;
+			  display: -ms-flexbox;
+			  display: -webkit-flex;
+			  display: flex;
+			  
+			  -webkit-flex-flow: row wrap;
+			  justify-content: center;
+				
+			}
+			.inner-flex-item {
+				margin-right: 10px;
+				cursor: pointer;
+				 -webkit-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  -moz-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  -ms-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  -o-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+			}
+			.inner-flex-item:hover {
+				color: #eee;
+				 -webkit-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  -moz-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  -ms-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  -o-transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+				  transition: all 0.2s cubic-bezier(.15,.69,.83,.67);
+			}
+			.inner-flex-item.s-selected {
+				color: #957676;
+			}
+			.sub-container {
+				background: #c5c5f5;
+			    margin-left: 30%;
+			    width: 60%;
+			    padding: 10px;
+			    color: white;
+			    min-height: 200px;
+			    /*-webkit-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -moz-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -ms-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -o-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  transition: all 1s cubic-bezier(.15,.69,.83,.67);*/
+			}
+			.sub-container-hide {
+				opacity: 0;
+				/*-webkit-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -moz-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -ms-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -o-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  transition: all 1s cubic-bezier(.15,.69,.83,.67);*/
+			}
+			.sub-container-show {
+				display:block;
+				opacity: 1;
+				/*-webkit-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -moz-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -ms-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -o-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  transition: all 1s cubic-bezier(.15,.69,.83,.67);*/
+			}
+			.s-display-none {
+				display: none;
+				/*-webkit-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -moz-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -ms-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  -o-transition: all 1s cubic-bezier(.15,.69,.83,.67);
+				  transition: all 1s cubic-bezier(.15,.69,.83,.67);*/
+			}
+		</style>
+		<script>
+			var currentIndex = 1;
+			var changeDiv = function(index) {
+				if(index == currentIndex) {
+					return;
+				} 
+				var domElem = document.querySelector(".sub-container-"+currentIndex)
+				var domElemClasses = domElem.classList;
+				domElemClasses.add("sub-container-hide");
+				domElemClasses.remove("sub-container-show");
+				var headerElem = document.querySelector(".header-item-"+currentIndex).classList;
+				headerElem.remove("s-selected");
+				currentIndex = index;
+				// setTimeout(function(){
+					var headerElem2 = document.querySelector(".header-item-"+currentIndex).classList;
+					headerElem2.add("s-selected");
+					domElemClasses.add("s-display-none"); 
+					var domElem2 = document.querySelector(".sub-container-"+currentIndex)
+					domElem2Classes = domElem2.classList;
+					if(domElem2Classes.contains("s-display-none")) {
+						domElem2Classes.remove("s-display-none");
+					}
+					domElem2Classes.remove("s-display-hide");
+					domElem2Classes.add("sub-container-show");
+				// }, 100)
+			}
+		</script>
+	</head>
+	<body>
+
+		<div class = "main-container">
+			<div class = "header-flex-container">
+				<div class = "inner-flex-item header-item-1 s-selected" onclick = "changeDiv(1)">
+					HOME
+				</div>
+				<div class = "inner-flex-item header-item-2" onclick = "changeDiv(2)">
+					PHOTOSHOOT
+				</div>
+				<div class = "inner-flex-item header-item-3" onclick = "changeDiv(3)">
+					VENUE AND TIMING
+				</div>
+			</div>
+			<div>
+				<div class = "main-heading">We invite you all to the wedding</div>
+			</div>
+			<div class = "sub-container sub-container-1">
+				1
+			</div>
+			<div class = "sub-container sub-container-2 s-display-none">
+				2
+			</div>
+			<div class = "sub-container sub-container-3 s-display-none">
+				3
+			</div>
+			
+		</div>
+
+		
+		
+	</body>
+</html>
