@@ -15,9 +15,9 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-app.get("*", function(req, res) {
-    res.render("index");
-});
+// app.get("*", function(req, res) {
+//     res.render("index");
+// });
 
 // tell express to listen for requests.
 app.listen(app.get('port'), function(){
